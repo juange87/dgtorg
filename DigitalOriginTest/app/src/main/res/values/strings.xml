@@ -1,4 +1,7 @@
 <resources>
-    <string name="app_name">DigitalOriginTest</string>
-    <string name="action_settings">Settings</string>
+    <string name="app_name">Digital Origin Test</string>
+    <string name="fragment_main_txt_result_default">0 €</string>
+    <string name="action_result">Calculate</string>
+    <string name="dialog_cancel">Cancel</string>
+    <string name="dialog_result_adding">"Adding a: "</string>
 </resources>
