@@ -6,6 +6,7 @@ package com.juange.digitalorigin.app.model;
 public class Cap extends Product {
 
     public static final double price = 15;
+    public static final double reducedPrice = 5.5;
 
     @Override
     protected double productPrice() {

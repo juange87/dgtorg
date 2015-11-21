@@ -78,7 +78,7 @@ public class Order {
         final int capElementsForDiscount = 2;
         final int elementsWithDiscount = capCount / capElementsForDiscount;
         final int elementsWithoutDiscount = capCount % capElementsForDiscount;
-        bill += elementsWithDiscount * (Cap.price / 2.0) * capElementsForDiscount;
+        bill += elementsWithDiscount * Cap.reducedPrice * capElementsForDiscount;
 
         if (elementsWithoutDiscount != 0 && capCount > 0) {
             bill += Cap.price * elementsWithoutDiscount;
