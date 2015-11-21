@@ -79,7 +79,7 @@ public class OrderTest {
         order.addProduct(new Tshirt());
         order.addProduct(new Tshirt());
         order.addProduct(new Cap());
-        order.addProduct(new Sticker());
+        order.addProduct(new Tshirt());
 
         final double expected = 91;
         final double reducedBill = order.getReducedBill();
