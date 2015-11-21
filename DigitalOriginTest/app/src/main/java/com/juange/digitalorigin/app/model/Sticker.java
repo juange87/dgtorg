@@ -14,6 +14,6 @@ public class Sticker extends Product {
 
     @Override
     public String toString() {
-        return "Sticker";
+        return super.toString() + "Sticker";
     }
 }

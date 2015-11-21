@@ -15,6 +15,6 @@ public class Cap extends Product {
 
     @Override
     public String toString() {
-        return "Cap";
+        return super.toString() + "Cap";
     }
 }

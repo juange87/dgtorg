@@ -14,6 +14,6 @@ public class Mug extends Product {
 
     @Override
     public String toString() {
-        return "Mug";
+        return super.toString() + "Mug";
     }
 }

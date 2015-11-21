@@ -16,6 +16,6 @@ public class Tshirt extends Product {
 
     @Override
     public String toString() {
-        return "Tshirt";
+        return super.toString() + "T-shirt";
     }
 }
