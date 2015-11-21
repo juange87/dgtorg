@@ -1,4 +1,4 @@
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -13,9 +13,9 @@
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerview"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="50dp"
+        android:layout_above="@+id/txt_result"
         />
 
     <TextView
@@ -25,17 +25,22 @@
         android:layout_gravity="bottom|center_horizontal"
         android:gravity="center"
         android:text="@string/fragment_main_txt_result_default"
+        android:layout_centerHorizontal="true"
         android:textSize="24sp"
         android:textStyle="bold"
+        android:layout_alignParentBottom="true"
+
         />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
         android:layout_margin="@dimen/fab_margin"
         android:src="@android:drawable/ic_menu_add"
         />
 
-</LinearLayout>
+</RelativeLayout>
