@@ -47,21 +47,26 @@ public class Order {
 
         bill += calculateStickers();
 
-        bill += mugs.size() * Mug.price;
+        bill += calculateMugs();
 
         return bill;
+    }
+
+    private double calculateMugs() {
+        return mugs.size() * Mug.price;
     }
 
     private double calculateStickers() {
         int stickerCount = stickers.size();
         double bill = 0.0;
 
-        final int i2 = stickerCount / 5;
-        final int i3 = stickerCount % 5;
-        bill += i2 * (Sticker.price / 3.0) * 5;
+        final int stickerElementsForDiscount = 5;
+        final int elementsWithDiscount = stickerCount / stickerElementsForDiscount;
+        final int elementsWithoutDiscount = stickerCount % stickerElementsForDiscount;
+        bill += elementsWithDiscount * Sticker.price  * 3;
 
-        if (i3 != 0 && stickerCount > 0) {
-            bill += Sticker.price * i3;
+        if (elementsWithoutDiscount != 0 && stickerCount > 0) {
+            bill += Sticker.price * elementsWithoutDiscount;
         }
         return bill;
     }
@@ -71,28 +76,27 @@ public class Order {
         double bill = 0.0;
 
         final int capElementsForDiscount = 2;
-        final int i = capCount / capElementsForDiscount;
-        final int i1 = capCount % capElementsForDiscount;
-        bill += i * (Cap.price / 2.0) * capElementsForDiscount;
+        final int elementsWithDiscount = capCount / capElementsForDiscount;
+        final int elementsWithoutDiscount = capCount % capElementsForDiscount;
+        bill += elementsWithDiscount * (Cap.price / 2.0) * capElementsForDiscount;
 
-        if (i1 != 0 && capCount > 0) {
-            bill += Cap.price * i1;
+        if (elementsWithoutDiscount != 0 && capCount > 0) {
+            bill += Cap.price * elementsWithoutDiscount;
         }
         return bill;
     }
 
     private double calculateTshirts() {
-       int tshirtCount = tshirts.size();
+        int tshirtCount = tshirts.size();
 
         double bill = 0;
 
-        final int i0 = tshirtCount / 3;
-        final int i00 = tshirtCount % 3;
-        bill += i0 * (Tshirt.reducedPrice) * 3;
-
-        if (i00 != 0 && tshirtCount > 0) {
-            bill += Tshirt.price * i00;
+        if (tshirtCount >= 3) {
+            bill += tshirtCount * Tshirt.reducedPrice;
+        } else {
+            bill += tshirtCount * Tshirt.price;
         }
+
         return bill;
     }
 }
